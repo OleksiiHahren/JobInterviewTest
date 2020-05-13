@@ -1,0 +1,22 @@
+.cell-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: beige;
+  width: 180px;
+  font-size: 12px;
+  height:60px;
+  border: white 1px solid;
+  cursor: pointer;
+}
+.cell-form {
+  width: 180px;
+  font-size: 12px;
+  background: beige;
+  height:60px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+}

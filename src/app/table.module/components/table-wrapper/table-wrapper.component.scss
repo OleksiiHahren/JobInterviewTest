@@ -1,0 +1,20 @@
+.cell-main-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  position: relative;
+  .cell-row{
+    display: flex;
+    height: 50px;
+    margin: 10px 0px;
+  }
+  .btn-wrapper{
+    display: flex;
+    margin: 10px 0px;
+    .add-new-btn{
+      heigth:35px;
+      color: black;
+    }
+  }
+
+}

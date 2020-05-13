@@ -1,0 +1,35 @@
+<div class="cell-main-wrapper"
+     *ngIf="tableData$ | async as tableData"
+>
+  <div class="cell-row">
+    <app-form (submitFormEmit)="addNewItemForTable($event)" *ngIf="addNewItemMode else buttonBlock"></app-form>
+    <ng-template #buttonBlock>
+      <div class="btn-wrapper">
+        <button class="add-new-btn" type="button" (click)="toggleAddItemMode()"
+        >Add new</button>
+      </div>
+
+    </ng-template>
+  </div>
+  <table>
+    <thead>
+    <tr class="table-header">
+      <th *ngFor="let name of cellKeysNames">{{name}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let rowItem of tableData; let indx = index">
+      <td  *ngFor="let cellKey of cellKeysNames">
+        <app-cell (changedValueEmit)="updateCellInTable(rowItem, $event, cellKey)"
+                  [cellData]="rowItem.hasOwnProperty(cellKey) ? rowItem[cellKey]: ' '"
+        >
+        </app-cell>
+      </td>
+      <td>
+        <button (click)="deleteItem(rowItem.cowId)"> Delete Item</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

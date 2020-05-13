@@ -1,0 +1,13 @@
+<div class="form-wrapper" [formGroup]="formGroup">
+  <div class="cell-form" *ngFor="let inputItem of keysForInputs">
+    <input [formControlName]="inputItem" type="text">
+  </div>
+  <div class="cell-form">
+    <button (click)="onSubmit()">
+      Submit
+    </button>
+    <button (click)="onSubmit(true)">
+      Cancel
+    </button>
+  </div>
+</div>

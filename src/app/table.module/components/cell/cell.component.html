@@ -1,0 +1,12 @@
+<div class="cell-wrapper" *ngIf="!editMode else inputBlock" (click)="editModeToggle()">
+  {{cellData}}
+</div>
+<ng-template #inputBlock>
+  <div class="cell-form">
+    <input #newValue [attr.value]="cellData" type="text">
+    <div class="cell-row">
+      <button (click)="setNewValue()"> Save</button>
+      <button (click)="editModeToggle()"> Cancel</button>
+    </div>
+  </div>
+</ng-template>
