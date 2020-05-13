@@ -1,0 +1,18 @@
+<div class="cell-main-wrapper"
+     *ngIf="tableData$ | async as tableData"
+>
+  <div class="cell-row">
+    <app-header-cell *ngFor="let name of cellKeysNames">{{name}}</app-header-cell>
+  </div>
+  <cdk-virtual-scroll-viewport style="height: 500px" itemSize="20">
+    <div class="cell-row" *cdkVirtualFor="let rowItem of tableData; let indx = index">
+      {{rowItem | json}}
+      <app-cell *ngFor="let cellKey of cellKeysNames" (changedValueEmit)="saveNewValueForCell($event, cellKey, indx)"
+                [cellData]="rowItem.hasOwnProperty(cellKey) ? rowItem[cellKey]: ' '"
+      >
+      </app-cell>
+    </div>
+  </cdk-virtual-scroll-viewport>
+  <div class="cell-row">
+  </div>
+</div>

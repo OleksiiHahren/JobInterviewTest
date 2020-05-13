@@ -1,0 +1,6 @@
+<div *ngIf="!editMode else inputBlock" (click)="editModeToggle()">
+  {{cellData}}
+</div>
+<ng-template #inputBlock>
+  <input (blur)="setNewValue($event.target)" type="text">
+</ng-template>

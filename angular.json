@@ -119,6 +119,15 @@
           }
         }
       }
-    }},
-  "defaultProject": "job-interview-test"
+    }
+  },
+  "defaultProject": "job-interview-test",
+  "cli": {
+    "analytics": "26fa3b52-bc1e-487c-834c-8fd0f272beb9"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
